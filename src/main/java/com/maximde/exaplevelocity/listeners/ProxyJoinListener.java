@@ -3,7 +3,6 @@ package com.maximde.exaplevelocity.listeners;
 import com.maximde.exaplevelocity.ExampleVelocity;
 import com.velocitypowered.api.event.Subscribe;
 import com.velocitypowered.api.event.connection.LoginEvent;
-import com.velocitypowered.api.event.proxy.ProxyShutdownEvent;
 import com.velocitypowered.api.proxy.Player;
 
 public record ProxyJoinListener(ExampleVelocity plugin) {
@@ -12,8 +11,4 @@ public record ProxyJoinListener(ExampleVelocity plugin) {
         Player player = event.getPlayer();
     }
 
-    @Subscribe
-    public void onProxyShutdown(ProxyShutdownEvent event) {
-
-    }
 }

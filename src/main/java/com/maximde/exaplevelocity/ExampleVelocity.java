@@ -6,6 +6,7 @@ import com.maximde.exaplevelocity.listeners.ProxyJoinListener;
 import com.velocitypowered.api.command.Command;
 import com.velocitypowered.api.event.proxy.ProxyInitializeEvent;
 import com.velocitypowered.api.event.Subscribe;
+import com.velocitypowered.api.event.proxy.ProxyShutdownEvent;
 import com.velocitypowered.api.plugin.Plugin;
 import com.velocitypowered.api.proxy.ProxyServer;
 import org.slf4j.Logger;
@@ -27,6 +28,11 @@ public class ExampleVelocity {
     public void onProxyInitialization(ProxyInitializeEvent event) {
         registerListener(new ProxyJoinListener(this));
         registerCommand("example", new ExampleCommand(this));
+    }
+
+    @Subscribe
+    public void onProxyShutdown(ProxyShutdownEvent event) {
+        //idk
     }
 
     private void registerListener(Object listener) {
